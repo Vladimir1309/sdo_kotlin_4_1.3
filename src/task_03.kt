@@ -6,10 +6,8 @@ fun main () {
         for (i in 1..n) {
             for (j in 1 ..n) {
                 if (i == j) print("0\t")
-                if (j > i) {
-                    print("1\t")
-                }
-                else print("2\t")
+                if (j > i) print("1\t")
+                if (j < i) print("2\t")
             }
             println()
         }
