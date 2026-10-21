@@ -1,4 +1,5 @@
 fun main () {
+    // Числовая матрица
     print("Укажите размер матрицы (от 3 до 9): ")
     val n = readln().toIntOrNull()
     if (n == null || n !in 3..9) print("Неверное значение")
