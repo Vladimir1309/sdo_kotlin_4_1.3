@@ -1,7 +1,7 @@
 fun main () {
-    print("Укажите размер матрицы: ")
+    print("Укажите размер матрицы (от 3 до 9): ")
     val n = readln().toIntOrNull()
-    if (n == null) print("Неверное значение")
+    if (n == null || n !in 3..9) print("Неверное значение")
     else {
         for (i in 1..n) {
             for (j in 1 ..n) {
