@@ -27,14 +27,19 @@ fun main () {
                 break
             }
             next = n
-            sum = current + next
+            sum += current + next
             current = next
             c++
-            if (min < current) min = current
-            if (min == cMin) cMin++
-            if (max > current) max = current
-            if (max == cMax) cMax++
-            if (current == 0) print("Не было введено ни одного числа")
+            if (min < current)
+                min = current
+            if (min == cMin)
+                cMin++
+            if (max > current)
+                max = current
+            if (max == cMax)
+                cMax++
+            if (current == 0)
+                print("Не было введено ни одного числа")
         }
     }
 }
