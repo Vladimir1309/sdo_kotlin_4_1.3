@@ -1,7 +1,5 @@
 fun main () {
     // Обработка потоков данных
-    var current = 0
-    var next = 0
     var avg = 0.toDouble()
     var sum = 0
     var min = 0
@@ -11,35 +9,38 @@ fun main () {
     var cMin = 0
     while (true) {
         print("Введите число: ")
-        var n = readln().toIntOrNull()
+        val n = readln().toIntOrNull()
         if (n == null) {
             println("Неверное значение, ожидаю ввод")
             continue
         }
         else {
             if (n == 0) {
-                avg = sum.toDouble() / c.toDouble()
-                println("Среднее арифметическое: ${avg}")
-                println("Наибольшее значение: $max")
-                println("Наименьшее значение: $min")
-                println("Количество повторений максимума: $cMax")
-                println("Количество повторений минимума: $cMin")
-                break
+                if (c == 0) {
+                    println("Не было введено ни одного числа")
+                    continue
+                }
+                else {
+                    avg = sum.toDouble() / c.toDouble()
+                    println("Среднее арифметическое: %.1f".format(avg))
+                    println("Наибольшее значение: $max")
+                    println("Наименьшее значение: $min")
+                    println("Количество повторений максимума: $cMax")
+                    println("Количество повторений минимума: $cMin")
+                    break
+                }
             }
-            next = n
-            sum += current + next
-            current = next
+            sum += n
             c++
-            if (min < current)
-                min = current
+            if (n > 0)
+                if (n < min)
+                    min = n
             if (min == cMin)
                 cMin++
-            if (max > current)
-                max = current
+            if (n > max)
+                max = n
             if (max == cMax)
                 cMax++
-            if (current == 0)
-                print("Не было введено ни одного числа")
         }
     }
 }
